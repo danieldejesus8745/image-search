@@ -1,6 +1,7 @@
 const baseUrl = 'https://api.pexels.com/v1/search?query=';
 const form = document.getElementById('form');
 const ulImages = document.getElementById('ulImages');
+const lastTerm = document.getElementById('lastTerm');
 
 form.addEventListener('submit', e => {
   e.preventDefault();
@@ -18,7 +19,7 @@ function getImages(term) {
   .then(response => response.json())
   .then(response => renderImages(response.photos))
   .catch(error => console.log(error))
-  .finally(() => console.log('Request is completed!'));
+  .finally(() => lastTerm.textContent = `Results for: ${term.toUpperCase()}`);
 }
 
 function renderImages(photos) {
@@ -35,3 +36,5 @@ function renderImages(photos) {
     ulImages.append(li);
   });
 }
+
+getImages('mountain');
