@@ -12,7 +12,7 @@ form.addEventListener('submit', e => {
 function getImages(term) {
   fetch (`${baseUrl}${term}`, {
     headers: {
-      'Authorization': 'Pxtfdm6xiqmXUq5dLZxCzjgHSCJv4Yf0TBAt7263jjmxAPdxEgFcoWIF'
+      'Authorization': 'dSPb5COpwq5JprcNsGszac0daY5ugq6FgWYpEzRJTCMxJeZyPBZwaMSH'
     },
     method: 'GET'
   })
